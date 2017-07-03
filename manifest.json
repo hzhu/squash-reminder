@@ -1,0 +1,22 @@
+{
+  "name": "GitHub Squash Reminder",
+  "description": "Alerts a confirmation to remind author to squash commits",
+  "version": "1.0",
+  "author": "Henry Zhu <hz@henryzhu.me>",
+  "permissions": [
+    "*://github.com/*/*/pull/*",
+    "webNavigation"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [{
+    "matches": ["*://github.com/*/*/pull/*"],
+    "js": ["content_script.js"]
+  }],
+  "browser_action": {
+    "default_title": "GitHub Squash Reminder"
+  },
+  "manifest_version": 2
+}
